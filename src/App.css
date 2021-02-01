@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,87 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
+
+h1 {
+}
+
+.wrapper {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(5, auto);
+}
+
+.tile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  min-height: 40px;
+  font-weight: bold;
+  font-size: 20px;
+  border: 4px saddlebrown dashed;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.tile--set {
+  background: khaki;
+  color: black
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  overflow-y: hidden;
+  overflow-x: hidden;
+
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+
+  pointer-events: none;
+}
+
+.highlighted {
+  background: seagreen;
+  color: white;
+}
+
+.reset-button {
+  margin: 35px;
+  padding: 15px;
+  font-size: medium;
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 500px) {
+
+  .tile {
+    padding: 3px;
+    min-height: 40px;
+    font-size: 10px;
+  }
+
+  .reset-button {
+    margin: 25px;
+    padding: 10px;
+  }
+}
+
