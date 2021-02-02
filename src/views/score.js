@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import { WinnerContext } from "../context/winner.context";
 import ConfettiComponent from "./confetti";
 
-
 function Score() {
   const { winner } = useContext(WinnerContext);
   const [score, setScore] = useState(0);
@@ -10,10 +9,15 @@ function Score() {
 
   useEffect(() => {
     winner.length * 2 > score && setConfetti(true);
-    confetti && setTimeout(() => {setConfetti(false);}, 1000);
     setScore(winner.length * 2);
-    
   }, [winner]);
+
+  useEffect(() => {
+    confetti &&
+      setTimeout(() => {
+        setConfetti(false);
+      }, 3000);
+  }, [score]);
 
   return (
     <div>
