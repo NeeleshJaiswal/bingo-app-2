@@ -48,7 +48,6 @@ function Bingo() {
   const toggle = id =>
     setState(state => {
       const checked = { ...state.checked, [id]: !state.checked[id] };
-      console.log('checked > ', checked);
       const won = isWon(checked);
       return {
         ...state,
