@@ -1,10 +1,10 @@
-# Getting Started with Bingo App
+# Getting Started with Tech Bingo App
 
-This project is for Bingo App
+This project is for Tech Bingo App
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, you can fork or take code on your local machine then run below commands:
 
 ### `npm install`
 
