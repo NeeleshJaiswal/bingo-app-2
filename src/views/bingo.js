@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import shuffle from "shuffle-array";
 import { WinnerContext } from '../context/winner.context';
+import { isWon } from '../services/winner-services';
 import { dataArray, lines } from '../utilities/data-util';
 
 import Score from './score';
@@ -32,18 +33,6 @@ function Bingo() {
         }
         setWinner(newArr);
       }, [state.checked]);
-
-      const isWon = checked => {
-        const range = [0, 1, 2, 3, 4];
-        return (
-          undefined !==
-            range.find(row => range.every(column => checked[row * 5 + column])) ||
-          undefined !==
-            range.find(column => range.every(row => checked[row * 5 + column])) ||
-          range.every(index => checked[index * 5 + index]) ||
-          range.every(index => checked[index * 5 + 4 - index])
-        );
-      };
  
   const toggle = id =>
     setState(state => {
@@ -68,11 +57,12 @@ function Bingo() {
 
   return (
     <div className="bingo">
-      <h1>Bingo</h1>
+      <h1>Tech Bingo</h1>
       <Score/>
       <div className="wrapper">
         {Object.keys(data).map(id => (
-          <Tile
+          
+          id < 25 && <Tile
             data={data}
             key={id}
             id={id}
@@ -80,10 +70,9 @@ function Bingo() {
             onToggle={() => toggle(id)}
           >
             {data[id]}
-          </Tile>
+          </Tile> 
         ))}
       </div>
-      {/* {state.won ? <Confetti /> : null} */}
 
       <button className='reset-button' onClick={handleClick}>Reset Game</button>
     </div>

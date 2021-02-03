@@ -30,7 +30,7 @@ function Tile({ data, id, children, onToggle, isSet }) {
     <div
       onClick={() => handleClick(id)}
       className={clsx(
-        `tile ${isSet ? "tile--set" : ""}`,
+        `tile ${isSet ? "tile-active" : ""}`,
         flag && "highlighted", id === '12' && 'free-slot'
       )}
     >

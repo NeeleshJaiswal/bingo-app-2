@@ -40,4 +40,12 @@ export const dataArray = [
         "GraphQL",
         "Bootstrap",
         "jQuery",
+        "Selenium",
+        "Pupeteer",
+        "Cypress",
+        "Jest",
+        "Mocha",
+        "React Native",
+        "Flutter",
+        "JSON",
       ];
