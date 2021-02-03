@@ -48,4 +48,6 @@ export const dataArray = [
         "React Native",
         "Flutter",
         "JSON",
+        "Django",
+        "Flask"
       ];
